@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import locales from "../data/locales.json";
+import { Icon } from "astro-icon/components";
+
+const {
+  lang = "es",
+  title,
+  description,
+  image = "/og-image.png",
+  url = "https://estefanidev.com"
+} = Astro.props;
+
+const t = locales.es;
+
+const rawPhone = t.profile.phone
+const phoneDigits = (rawPhone || '').replace(/\D+/g, '')
+const waHref = phoneDigits ? `https://wa.me/${phoneDigits}` : null
+const WA_TARGET = '_blank'
+const WA_REL = 'noopener noreferrer'
+
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:locale" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-950 antialiased">
+    <slot />
+
+    <a
+          href={waHref}
+          target={WA_TARGET}
+          rel={WA_REL}
+          class="fixed right-5 bottom-5 z-50 sm:right-6 sm:bottom-6"
+        >
+          <span class="dark:ring-ink-800 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-green-500 text-white shadow-lg ring-2 ring-white transition-transform hover:scale-105 active:scale-95 md:h-14 md:w-14">
+            <Icon name="mdi:whatsapp" class="h-7 w-7 md:h-8 md:w-8" />
+          </span>
+        </a>
+
+  </body>
+</html>

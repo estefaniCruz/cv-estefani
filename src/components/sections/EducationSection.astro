@@ -1,0 +1,47 @@
+---
+import IconBadge from "../ui/IconBadge.astro";
+
+interface EducationItem {
+  degree: string;
+  center: string;
+  date: string;
+}
+
+interface Props {
+  title: string;
+  icon: string;
+  items: EducationItem[];
+}
+
+const { title, icon, items } = Astro.props as Props;
+---
+
+<section id="educacion" class="flex h-full flex-col">
+  <article class="rounded-3xl bg-white p-8 shadow-xl h-full">
+    <header class="mb-8">
+      <IconBadge icon={icon} label={title} as="h2" />
+    </header>
+
+    <div class="relative space-y-10 pl-12">
+      <div class="absolute left-3 top-2 h-full w-px bg-brand-200"></div>
+
+      {
+        items.map((item) => (
+          <div class="relative">
+            <span class="absolute -left-12 top-2 size-4 rounded-full bg-brand-500 ring-4 ring-brand-100" />
+
+            <h3 class="max-w-sm text-lg font-bold leading-snug text-text">
+              {item.degree}
+            </h3>
+
+            <p class="mt-1 text-sm text-muted">
+              {item.center}
+              <span class="mx-2">|</span>
+              {item.date}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</section>

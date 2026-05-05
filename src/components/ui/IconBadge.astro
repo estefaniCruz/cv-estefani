@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  label: string;
+  href?: string;
+  as?: "span" | "h2";
+}
+
+const { icon, label, href, as = "span" } = Astro.props as Props;
+
+const isExternal = href?.startsWith("http");
+
+const base = "flex items-center gap-3";
+const wrapper = "flex items-center justify-center size-10 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-800 dark:text-brand-200";
+
+const textBase = "text-sm font-medium text-text";
+const textStyles = {
+  span: textBase,
+  h2: "text-lg font-semibold text-text"
+};
+
+const Tag = as;
+---
+
+{href ? (
+  <a
+    href={href}
+    class={`${base} transition hover:opacity-80`}
+    target={isExternal ? "_blank" : undefined}
+    rel={isExternal ? "noopener noreferrer" : undefined}
+  >
+    <div class={wrapper}>
+      <Icon name={icon} class="size-5" />
+    </div>
+
+    <Tag class={textStyles[as]}>
+      {label}
+    </Tag>
+  </a>
+) : (
+  <div class={base}>
+    <div class={wrapper}>
+      <Icon name={icon} class="size-5" />
+    </div>
+
+    <Tag class={textStyles[as]}>
+      {label}
+    </Tag>
+  </div>
+)}

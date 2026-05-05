@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface ExperienceItem {
+  company: string;
+  logo: string;
+  position: string;
+  date: string;
+  tasks: string[];
+}
+
+interface Props {
+  title: string;
+  icon: string;
+  items: ExperienceItem[];
+}
+
+const { title, icon, items } = Astro.props as Props;
+---
+
+<section id="experiencia" class="mt-10">
+  <div class="rounded-3xl bg-white p-8 shadow-xl  h-full">
+    <header class="mb-10 flex items-center gap-5">
+      <div class="flex size-14 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+        <Icon name={icon} class="size-7" />
+      </div>
+
+      <h2 class="text-2xl font-extrabold uppercase tracking-tight text-slate-950">
+        {title}
+      </h2>
+    </header>
+
+    <div class="relative">
+      <div class="absolute left-7 top-0 hidden h-full w-px bg-brand-200 md:block"></div>
+
+      <div class="space-y-12">
+        {
+          items.map((item) => (
+            <article class="relative grid gap-6 md:grid-cols-[12rem_1fr] md:gap-10 md:pl-16">
+              <span class="absolute left-5 top-8 hidden size-4 rounded-full bg-brand-500 ring-4 ring-brand-100 md:block"></span>
+
+              <div class="flex justify-center md:justify-start">
+                <div class="flex h-32 w-48 items-center justify-center rounded-xl border border-slate-100 bg-white p-6 shadow-md">
+                  <img
+                    src={item.logo}
+                    alt={`Logo ${item.company}`}
+                    class="max-h-20 max-w-full object-contain"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-brand-700">
+                  {item.position}
+                </h3>
+
+                <p class="mt-1 text-base font-medium text-slate-500">
+                  {item.date}
+                </p>
+
+                <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-700">
+                  {item.tasks.map((task) => (
+                    <li>{task}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

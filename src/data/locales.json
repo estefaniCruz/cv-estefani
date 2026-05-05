@@ -1,0 +1,171 @@
+{
+  "es": {
+    "seo": {
+      "title": "Estefani Tovar de la Cruz | Desarrolladora Web Junior Java",
+      "description": "CV online de Estefani Tovar de la Cruz, desarrolladora web junior enfocada en Java Spring Boot, APIs REST, Angular, TypeScript y AWS.",
+      "image": "/og-image.png",
+      "url": "https://estefanidev.com"
+    },
+    "nav": [
+      { "label": "Sobre mí", "href": "#sobre-mi" },
+      { "label": "Experiencia", "href": "#experiencia" },
+      { "label": "Educación", "href": "#educacion" },
+      { "label": "Habilidades", "href": "#habilidades" },
+      { "label": "Contacto", "href": "#contacto" }
+    ],
+    "profile": {
+      "logo": "Estefani Tovar",
+      "name": "Estefani Tovar de la Cruz",
+      "role": "Desarrolladora Web Junior (Java)",
+      "location": "Madrid, España",
+      "email": "estefanitovardelacruz@gmail.com",
+      "phone": "+34 611 680 412",
+      "linkedin": "linkedin.com/in/estefani-tovar-de-la-cruz",
+      "summary": "Desarrolladora de aplicaciones web junior enfocada en backend con Java Spring Boot y desarrollo de APIs REST. Con experiencia práctica en entornos reales y conocimientos en Angular, TypeScript y AWS. Me caracterizo por una rápida capacidad de aprendizaje, proactividad y resolución de problemas en entornos técnicos.",
+      "download_cv": "Descargar CV",
+      "url_cv": "/cv-estefani-tovar.pdf",
+      "url_linkedin": "https://linkedin.com/in/estefani-tovar-de-la-cruz",
+      "go_to_linkedin": "Ver en LinkedIn",
+      "contact_items": [
+        {
+          "icon": "mdi:map-marker-outline",
+          "label": "Madrid, España",
+          "type": "text"
+        },
+        {
+          "icon": "mdi:email-outline",
+          "label": "estefanitovardelacruz@gmail.com",
+          "href": "mailto:estefanitovardelacruz@gmail.com"
+        },
+        {
+          "icon": "mdi:phone-outline",
+          "label": "611 680 412",
+          "href": "tel:611680412"
+        },
+        {
+          "icon": "mdi:linkedin",
+          "label": "linkedin.com/in/estefani-tovar-de-la-cruz",
+          "href": "https://linkedin.com/in/estefani-tovar-de-la-cruz"
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experiencia Profesional",
+      "icon": "mdi:briefcase-outline",
+      "items": [
+        {
+          "company": "CGI",
+          "logo": "/logos/cgi.jpeg",
+          "position": "Desarrolladora Junior en prácticas – CGI",
+          "date": "02/2026 – Actualidad",
+          "tasks": [
+            "Colaboración en la migración de aplicaciones empresariales de Java 8 a Java 21, trabajando con Eclipse en entornos de desarrollo reales.",
+            "Análisis y validación de código entre versiones para asegurar la correcta adaptación del sistema, utilizando herramientas como WinMerge.",
+            "Formación práctica en Oracle APEX."
+          ]
+        },
+        {
+          "company": "NETCHECK",
+          "logo": "/logos/netcheck.jpeg",
+          "position": "Desarrolladora Junior en prácticas – NETCHECK, S.A. (EducaMadrid)",
+          "date": "02/2025 – 03/2025",
+          "tasks": [
+            "Desarrollo de una API REST en PHP para la validación y gestión segura de usuarios.",
+            "Procesamiento y validación de datos provenientes de archivos Excel, aplicando lógica basada en patrones y reglas definidas.",
+            "Pruebas funcionales de APIs mediante Postman."
+          ]
+        },
+        {
+          "company": "SaludMadrid",
+          "logo": "/logos/saludmadrid.png",
+          "position": "Auxiliar de Enfermería – Hospital Gregorio Marañón y sector privado",
+          "date": "2012 – 2025",
+          "tasks": [
+            "Trabajo en equipo y coordinación en entornos de alta presión.",
+            "Mejora de la atención al paciente mediante comunicación efectiva."
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Educación",
+      "icon": "mdi:school-outline",
+      "items": [
+        {
+          "degree": "Grado Superior en Desarrollo de Aplicaciones Web",
+          "center": "CPR FPE Nelson",
+          "date": "2025 – 2026"
+        },
+        {
+          "degree": "Grado Superior en Desarrollo de Aplicaciones Web",
+          "center": "IES Villablanca",
+          "date": "2024 – 2025"
+        },
+        {
+          "degree": "Bachillerato de Humanidades y Ciencias Sociales",
+          "center": "IES Gómez Moreno",
+          "date": "2012 – 2014"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Habilidades",
+      "icon": "mdi:code-tags",
+      "technical_title": "Técnicas",
+      "professional_title": "Profesionales",
+      "technical": [
+        "Java (Spring Boot)",
+        "APIs REST",
+        "SQL",
+        "AWS",
+        "Angular",
+        "TypeScript",
+        "PHP",
+        "Postman",
+        "WinMerge",
+        "Eclipse",
+        "Oracle APEX"
+      ],
+      "professional": [
+        {
+          "icon": "mdi:account-group-outline",
+          "label": "Resolución de problemas"
+        },
+        {
+          "icon": "mdi:account-outline",
+          "label": "Trabajo en equipo"
+        },
+        {
+          "icon": "mdi:rocket-launch-outline",
+          "label": "Adaptabilidad"
+        },
+        {
+          "icon": "mdi:target",
+          "label": "Rápida capacidad de aprendizaje"
+        }
+      ]
+    },
+    "contact_cta": {
+      "title": "¿Hablamos?",
+      "description": "Estoy abierta a nuevas oportunidades y proyectos. ¡Conectemos!",
+      "icon": "mdi:send-outline",
+      "email_label": "Contactar por email",
+      "email_href": "mailto:estefanitovardelacruz@gmail.com",
+      "links": [
+        {
+          "icon": "mdi:linkedin",
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/in/estefani-tovar-de-la-cruz"
+        },
+        {
+          "icon": "mdi:github",
+          "label": "GitHub",
+          "href": "https://github.com/estefaniCruz"
+        }
+      ]
+    },
+    "footer": {
+      "copyright": "© 2025 Estefani Tovar de la Cruz. Todos los derechos reservados."
+    }
+  }
+}

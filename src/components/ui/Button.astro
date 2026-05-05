@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "sm" | "md" | "lg";
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  rel?: string;
+  iconName?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  target,
+  rel,
+  iconName,
+} = Astro.props as Props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
+
+const variants = {
+  primary:
+    "bg-brand-600 text-white hover:bg-brand-700 focus-visible:outline-brand-500 dark:bg-brand-400 dark:text-slate-950 dark:hover:bg-brand-300",
+  secondary:
+    "border border-border bg-surface text-text hover:bg-surface-2 focus-visible:outline-brand-500",
+  ghost: "text-text-muted hover:text-text focus-visible:outline-brand-500",
+};
+
+const sizes = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-6 py-3 text-base",
+};
+
+const classes = `${base} ${variants[variant]} ${sizes[size]}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes} target={target} rel={rel}>
+      {iconName && <Icon name={iconName} class="size-5" />} <slot />
+    </a>
+  ) : (
+    <button class={classes}>
+      {iconName && <Icon name={iconName} class="size-5" />} <slot />
+    </button>
+  )
+}

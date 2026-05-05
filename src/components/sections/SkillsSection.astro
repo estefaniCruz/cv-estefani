@@ -1,0 +1,74 @@
+---
+import IconBadge from "../ui/IconBadge.astro";
+import SkillTag from "../ui/SkillTag.astro";
+import { Icon } from "astro-icon/components";
+
+interface ProfessionalSkill {
+  icon: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  icon: string;
+  technical_title: string;
+  professional_title: string;
+  technical: string[];
+  professional: ProfessionalSkill[];
+}
+
+const {
+  title,
+  icon,
+  technical_title,
+  professional_title,
+  technical,
+  professional,
+} = Astro.props as Props;
+---
+
+<section id="habilidades" class="flex h-full flex-col">
+  <article class="rounded-3xl bg-white p-8 shadow-xl h-full">
+    <!-- HEADER -->
+    <header class="mb-8">
+      <IconBadge icon={icon} label={title} as="h2" />
+    </header>
+
+    <!-- TÉCNICAS -->
+    <div>
+      <h3 class="mb-4 text-sm font-bold uppercase text-brand-600">
+        {technical_title}
+      </h3>
+
+      <div class="flex flex-wrap gap-3">
+        {technical.map((skill) => <SkillTag label={skill} />)}
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <hr class="my-8 border-slate-200" />
+
+    <!-- PROFESIONALES -->
+    <div>
+      <h3 class="mb-6 text-sm font-bold uppercase text-brand-600">
+        {professional_title}
+      </h3>
+
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+        {
+          professional.map((skill) => (
+            <div class="flex flex-col items-center text-center gap-2">
+              <div class="flex items-center justify-center size-12 rounded-full  text-brand-600">
+                <Icon name={skill.icon} class="size-6" />
+              </div>
+
+              <span class="text-sm font-medium text-slate-700">
+                {skill.label}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </article>
+</section>

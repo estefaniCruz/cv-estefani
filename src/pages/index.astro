@@ -1,17 +1,125 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import locales from "../data/locales.json";
+import Button from "../components/ui/Button.astro";
+import IconBadge from "../components/ui/IconBadge.astro";
+import Header from "../components/layout/Header.astro";
+import ExperienceSection from "../components/sections/ExperienceSection.astro";
+import EducationSection from "../components/sections/EducationSection.astro";
+import SkillsSection from "../components/sections/SkillsSection.astro";
+import ContactCta from "../components/sections/ContactCta.astro";
 
+const t = locales.es;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={t.seo.title} description={t.seo.description} url={t.seo.url}>
+  <Header name={t.profile.logo} items={t.nav} />
+
+  <main id="top" class="mx-6  md:max-w-8xl scroll-mt-24 md:px-16 md:py-16">
+    <section id="sobre-mi">
+      <div
+        class="grid gap-10 rounded-3xl bg-white p-8 shadow-xl md:grid-cols-3 md:items-center"
+      >
+        <!-- FOTO -->
+        <div class="flex justify-center">
+          <img
+            src="/estefani.png"
+            alt="Foto de Estefani Tovar"
+            class="h-56 w-56 rounded-full object-cover shadow-lg"
+          />
+        </div>
+
+        <!-- INFO -->
+        <div class="text-center md:col-span-1 md:text-left">
+          <h1
+            class="text-4xl font-extrabold uppercase tracking-tight text-slate-900"
+          >
+            {t.profile.name}
+          </h1>
+
+          <p class="mt-3 text-lg font-semibold text-violet-700">
+            {t.profile.role}
+          </p>
+
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            {t.profile.summary}
+          </p>
+
+          <div
+            class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
+          >
+            <Button
+              variant="primary"
+              size="md"
+              iconName="material-symbols:download"
+			  href={t.profile.url_cv}
+			  target="_blank"
+            >
+              {t.profile.download_cv}
+            </Button>
+
+            <Button
+              variant="secondary"
+              size="md"
+              iconName="mdi:linkedin"
+              href={t.profile.url_linkedin}
+              target="_blank"
+            >
+              {t.profile.go_to_linkedin}
+            </Button>
+          </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div
+          class="flex flex-col align-baseline gap-4 md:items-start md:border-l md:pl-6"
+        >
+          {
+            t.profile.contact_items.map((item) => (
+              <IconBadge icon={item.icon} label={item.label} href={item.href} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <ExperienceSection
+      title={t.experience.title}
+      icon={t.experience.icon}
+      items={t.experience.items}
+    />
+    <div class="grid gap-6 py-10 md:grid-cols-2 md:items-stretch">
+      <EducationSection
+        title={t.education.title}
+        icon={t.education.icon}
+        items={t.education.items}
+      />
+
+      <SkillsSection
+        title={t.skills.title}
+        icon={t.skills.icon}
+        technical_title={t.skills.technical_title}
+        professional_title={t.skills.professional_title}
+        technical={t.skills.technical}
+        professional={t.skills.professional}
+      />
+    </div>
+
+	<ContactCta
+  title={t.contact_cta.title}
+  description={t.contact_cta.description}
+  icon={t.contact_cta.icon}
+  email_label={t.contact_cta.email_label}
+  email_href={t.contact_cta.email_href}
+  links={t.contact_cta.links}
+/>
+  </main>
+
+  <footer class=" border-t border-border py-6">
+  <div class="mx-auto max-w-6xl px-6 text-center">
+    <p class="text-sm text-text-muted">
+      {t.footer.copyright}
+    </p>
+  </div>
+</footer>
+</BaseLayout>

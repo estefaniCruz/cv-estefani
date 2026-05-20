@@ -23,7 +23,7 @@
       "linkedin": "linkedin.com/in/estefani-tovar-de-la-cruz",
       "summary": "Desarrolladora de aplicaciones web junior enfocada en backend con Java Spring Boot y desarrollo de APIs REST. Con experiencia práctica en entornos reales y conocimientos en Angular, TypeScript y AWS. Me caracterizo por una rápida capacidad de aprendizaje, proactividad y resolución de problemas en entornos técnicos.",
       "download_cv": "Descargar CV",
-      "url_cv": "/cv-estefani-tovar.pdf",
+      "url_cv": "/cv_estefani_tovar_v2.pdf",
       "url_linkedin": "https://linkedin.com/in/estefani-tovar-de-la-cruz",
       "go_to_linkedin": "Ver en LinkedIn",
       "contact_items": [
@@ -94,18 +94,19 @@
         {
           "degree": "Grado Superior en Desarrollo de Aplicaciones Web",
           "center": "CPR FPE Nelson",
-          "date": "2025 – 2026"
-        },
-        {
-          "degree": "Grado Superior en Desarrollo de Aplicaciones Web",
-          "center": "IES Villablanca",
-          "date": "2024 – 2025"
+          "date": "2024 – 2026"
         },
         {
           "degree": "Bachillerato de Humanidades y Ciencias Sociales",
           "center": "IES Gómez Moreno",
           "date": "2012 – 2014"
+        },
+        {
+          "degree": "Grado Medio en Cuidados Auxiliares de Enfermería",
+          "center": "IES Las Musas",
+          "date": "2010 – 2011"
         }
+        
       ]
     },
     "skills": {
